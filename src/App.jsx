@@ -1,8 +1,8 @@
 ﻿import { useEffect, useMemo, useRef, useState } from "react";
-import { CATEGORIES, FOODS } from "./Constants";
-import FoodCard from "./Foodcard";
-import FoodModal from "./Foodmodal";
-import SpinAnimation from "./Spinanimation";
+import { CATEGORIES, FOODS } from "./data/Constants";
+import FoodCard from "./components/Foodcard";
+import FoodModal from "./components/Foodmodal";
+import SpinAnimation from "./components/Spinanimation";
 import "./App.css";
 
 export default function App() {

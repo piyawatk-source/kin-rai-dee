@@ -1,4 +1,4 @@
-import { FOODS } from "./Constants";
+import { FOODS } from "../data/Constants";
 
 export default function SpinAnimation({ isSpinning }) {
   return (
