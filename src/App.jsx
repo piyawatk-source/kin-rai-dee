@@ -42,7 +42,7 @@ export default function App() {
   }, []);
 
   return (
-    <div style={{ minHeight: "100vh", background: "#F8FAFC" }}>
+    <div style={{ minHeight: "100vh", background: "#FDF6E3" }}>
       <div
         style={{
           maxWidth: 1200,
@@ -51,82 +51,86 @@ export default function App() {
         }}
       >
         <header style={{ marginBottom: 26 }}>
+          <img
+            src="/images/thai2.png"
+            alt="Thai food illustration"
+            style={{
+              width: "100%",
+              height: "auto",
+              display: "block",
+              pointerEvents: "none",
+              userSelect: "none",
+              filter: "drop-shadow(0 4px 16px rgba(120,60,0,0.10))",
+            }}
+          />
           <div
             style={{
               display: "flex",
               justifyContent: "space-between",
-              alignItems: "center",
+              alignItems: "flex-end",
               flexWrap: "wrap",
-              gap: 12,
+              gap: 16,
+              marginTop: 16,
             }}
           >
             <div>
               <div
                 style={{
-                  fontSize: 14,
+                  fontSize: 13,
                   fontWeight: 700,
-                  color: "#2563EB",
+                  color: "#991B1B",
                   textTransform: "uppercase",
-                  letterSpacing: "1.4px",
+                  letterSpacing: "2px",
                 }}
               >
-                Kin Rai Dee
+                อาหารตามสุ่ม
               </div>
               <h1
                 style={{
-                  margin: "10px 0 0",
+                  margin: "8px 0 0",
                   fontSize: 38,
-                  lineHeight: 1.05,
-                  color: "#111827",
+                  lineHeight: 1.1,
+                  color: "#1C1410",
+                  fontWeight: 800,
                 }}
               >
-                Food Random Menu
+                สุ่มเมนูอาหารไทย
               </h1>
               <p
                 style={{
-                  margin: "10px 0 0",
-                  color: "#475569",
-                  maxWidth: 640,
+                  margin: "8px 0 0",
+                  color: "#6B4F3A",
+                  maxWidth: 480,
                   fontSize: 15,
                 }}
               >
-                Select a category and click a dish to view the details.
+                เลือกหมวดหมู่และกดที่เมนูเพื่อดูรายละเอียดสูตรอาหาร
               </p>
             </div>
             <div
               onClick={handleRandomFood}
               className={`popularDishButton${isSpinning ? " spinning" : ""}`}
               style={{
-                width: 120,
-                height: 120,
-                display: "flex",
+                display: "inline-flex",
                 alignItems: "center",
-                justifyContent: "center",
+                gap: 14,
+                padding: "18px 40px",
                 cursor: "pointer",
               }}
             >
-              <div style={{ textAlign: "center", color: "#fff" }}>
-                <div
-                  style={{
-                    fontSize: 32,
-                    marginBottom: 4,
-                    filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.3))",
-                  }}
-                >
-                  {isSpinning ? "🎲" : "🍛"}
-                </div>
-                <div
-                  style={{
-                    fontSize: 12,
-                    fontWeight: 600,
-                    marginTop: 6,
-                    textShadow: "0 1px 2px rgba(0,0,0,0.3)",
-                    letterSpacing: "0.5px",
-                  }}
-                >
-                  {isSpinning ? "กำลังสุ่ม..." : "Popular Dish"}
-                </div>
-              </div>
+              <span style={{ fontSize: 30, filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.3))" }}>
+                🍛
+              </span>
+              <span
+                style={{
+                  color: "#fff",
+                  fontSize: 20,
+                  fontWeight: 700,
+                  textShadow: "0 1px 2px rgba(0,0,0,0.3)",
+                }}
+              >
+                {isSpinning ? "กำลังสุ่ม..." : "สุ่มเมนูเดี๋ยวนี้"}
+              </span>
             </div>
           </div>
         </header>
@@ -150,9 +154,9 @@ export default function App() {
                 style={{
                   border: "1px solid",
                   borderColor:
-                    activeCategory === category ? "#2563EB" : "#E2E8F0",
-                  background: activeCategory === category ? "#EFF6FF" : "#fff",
-                  color: activeCategory === category ? "#1D4ED8" : "#334155",
+                    activeCategory === category ? "#991B1B" : "#DEB887",
+                  background: activeCategory === category ? "#991B1B" : "#FFFBF0",
+                  color: activeCategory === category ? "#fff" : "#6B4F3A",
                   padding: "10px 16px",
                   borderRadius: 999,
                   cursor: "pointer",
@@ -183,10 +187,10 @@ export default function App() {
                 style={{
                   fontSize: 18,
                   fontWeight: 800,
-                  color: "#111827",
+                  color: "#1C1410",
                   textAlign: "center",
                   background:
-                    "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                    "linear-gradient(135deg, #D97706 0%, #991B1B 100%)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -205,25 +209,25 @@ export default function App() {
               <div
                 onClick={() => setSelectedFood(randomFood)}
                 style={{
-                  background: "#fff",
-                  border: `2px solid ${randomFood.accent}`,
+                  background: "#FFFBF0",
+                  border: "2px solid #B45309",
                   borderRadius: 24,
                   overflow: "hidden",
                   cursor: "pointer",
                   transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                   transform: "translateY(0)",
-                  boxShadow: `0 20px 40px ${randomFood.accent}30`,
+                  boxShadow: "0 20px 40px rgba(153,27,27,0.15)",
                   maxWidth: 480,
                   width: "100%",
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform =
                     "translateY(-8px) scale(1.02)";
-                  e.currentTarget.style.boxShadow = `0 32px 64px ${randomFood.accent}40`;
+                  e.currentTarget.style.boxShadow = "0 32px 64px rgba(153,27,27,0.22)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = "translateY(0) scale(1)";
-                  e.currentTarget.style.boxShadow = `0 20px 40px ${randomFood.accent}30`;
+                  e.currentTarget.style.boxShadow = "0 20px 40px rgba(153,27,27,0.15)";
                 }}
               >
                 <div style={{ position: "relative" }}>
@@ -242,17 +246,17 @@ export default function App() {
                       position: "absolute",
                       top: 16,
                       right: 16,
-                      background: "rgba(255, 255, 255, 0.95)",
+                      background: "rgba(255, 248, 220, 0.95)",
                       backdropFilter: "blur(10px)",
                       borderRadius: 20,
                       padding: "6px 12px",
                       fontSize: 12,
                       fontWeight: 700,
-                      color: randomFood.accent,
-                      border: `1px solid ${randomFood.accent}30`,
+                      color: "#991B1B",
+                      border: "1px solid rgba(153,27,27,0.25)",
                     }}
                   >
-                    ⭐ Popular
+                    ⭐ แนะนำ
                   </div>
                 </div>
 
@@ -271,7 +275,7 @@ export default function App() {
                         style={{
                           fontWeight: 800,
                           fontSize: 24,
-                          color: "#111827",
+                          color: "#1C1410",
                           lineHeight: 1.2,
                           marginBottom: 4,
                         }}
@@ -281,7 +285,7 @@ export default function App() {
                       <div
                         style={{
                           fontSize: 14,
-                          color: "#6B7280",
+                          color: "#9C7B5A",
                           fontWeight: 500,
                         }}
                       >
@@ -290,14 +294,14 @@ export default function App() {
                     </div>
                     <span
                       style={{
-                        background: `linear-gradient(135deg, ${randomFood.accent}20, ${randomFood.accent}40)`,
-                        color: randomFood.accent,
+                        background: "linear-gradient(135deg, #FEF3C7, #FCD34D50)",
+                        color: "#92400E",
                         fontSize: 12,
                         fontWeight: 700,
                         padding: "6px 14px",
                         borderRadius: 20,
                         whiteSpace: "nowrap",
-                        border: `1px solid ${randomFood.accent}30`,
+                        border: "1px solid #FCD34D80",
                       }}
                     >
                       {randomFood.difficulty}
@@ -317,12 +321,12 @@ export default function App() {
                         key={tag}
                         style={{
                           fontSize: 12,
-                          background: "#F8FAFC",
-                          color: "#475569",
+                          background: "#FEF3C7",
+                          color: "#92400E",
                           padding: "4px 12px",
                           borderRadius: 16,
                           fontWeight: 500,
-                          border: "1px solid #E2E8F0",
+                          border: "1px solid #FCD34D50",
                         }}
                       >
                         #{tag}
@@ -349,7 +353,7 @@ export default function App() {
                       <span
                         style={{
                           fontSize: 14,
-                          color: "#374151",
+                          color: "#1C1410",
                           fontWeight: 600,
                         }}
                       >
@@ -367,7 +371,7 @@ export default function App() {
                       <span
                         style={{
                           fontSize: 14,
-                          color: "#374151",
+                          color: "#1C1410",
                           fontWeight: 600,
                         }}
                       >
@@ -380,13 +384,13 @@ export default function App() {
                     style={{
                       textAlign: "center",
                       padding: "12px 0",
-                      borderTop: "1px solid #E5E7EB",
+                      borderTop: "1px solid #E8D5B7",
                     }}
                   >
                     <span
                       style={{
                         fontSize: 13,
-                        color: "#6B7280",
+                        color: "#9C7B5A",
                         fontWeight: 500,
                       }}
                     >
