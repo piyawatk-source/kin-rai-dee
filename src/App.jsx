@@ -118,9 +118,6 @@ export default function App() {
                 cursor: "pointer",
               }}
             >
-              <span style={{ fontSize: 30, filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.3))" }}>
-                🍛
-              </span>
               <span
                 style={{
                   color: "#fff",
@@ -155,7 +152,8 @@ export default function App() {
                   border: "1px solid",
                   borderColor:
                     activeCategory === category ? "#991B1B" : "#DEB887",
-                  background: activeCategory === category ? "#991B1B" : "#FFFBF0",
+                  background:
+                    activeCategory === category ? "#991B1B" : "#FFFBF0",
                   color: activeCategory === category ? "#fff" : "#6B4F3A",
                   padding: "10px 16px",
                   borderRadius: 999,
@@ -223,11 +221,13 @@ export default function App() {
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform =
                     "translateY(-8px) scale(1.02)";
-                  e.currentTarget.style.boxShadow = "0 32px 64px rgba(153,27,27,0.22)";
+                  e.currentTarget.style.boxShadow =
+                    "0 32px 64px rgba(153,27,27,0.22)";
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = "translateY(0) scale(1)";
-                  e.currentTarget.style.boxShadow = "0 20px 40px rgba(153,27,27,0.15)";
+                  e.currentTarget.style.boxShadow =
+                    "0 20px 40px rgba(153,27,27,0.15)";
                 }}
               >
                 <div style={{ position: "relative" }}>
@@ -294,7 +294,8 @@ export default function App() {
                     </div>
                     <span
                       style={{
-                        background: "linear-gradient(135deg, #FEF3C7, #FCD34D50)",
+                        background:
+                          "linear-gradient(135deg, #FEF3C7, #FCD34D50)",
                         color: "#92400E",
                         fontSize: 12,
                         fontWeight: 700,
