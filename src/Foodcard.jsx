@@ -11,16 +11,16 @@ export default function FoodCard({ food, onClick }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        background: "#fff",
-        border: `1px solid ${hovered ? food.accent + "55" : "#E5E7EB"}`,
+        background: "#FFFBF0",
+        border: `1px solid ${hovered ? "#B45309" : "#DEB887"}`,
         borderRadius: 16,
         overflow: "hidden",
         cursor: "pointer",
         transition: "all 0.2s ease",
         transform: hovered ? "translateY(-4px)" : "translateY(0)",
         boxShadow: hovered
-          ? `0 12px 28px ${food.accent}20`
-          : "0 1px 4px rgba(0,0,0,0.05)",
+          ? "0 12px 28px rgba(153,27,27,0.12)"
+          : "0 1px 4px rgba(120,70,20,0.07)",
       }}
     >
       <FoodImage
@@ -44,13 +44,13 @@ export default function FoodCard({ food, onClick }) {
               style={{
                 fontWeight: 700,
                 fontSize: 14,
-                color: "#111827",
+                color: "#1C1410",
                 lineHeight: 1.3,
               }}
             >
               {food.name}
             </div>
-            <div style={{ fontSize: 11, color: "#9CA3AF", marginTop: 1 }}>
+            <div style={{ fontSize: 11, color: "#9C7B5A", marginTop: 1 }}>
               {food.nameEn}
             </div>
           </div>
@@ -78,8 +78,8 @@ export default function FoodCard({ food, onClick }) {
               key={tag}
               style={{
                 fontSize: 10,
-                background: "#F3F4F6",
-                color: "#6B7280",
+                background: "#FEF3C7",
+                color: "#92400E",
                 padding: "2px 7px",
                 borderRadius: 20,
               }}
@@ -90,8 +90,8 @@ export default function FoodCard({ food, onClick }) {
         </div>
 
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <span style={{ fontSize: 11, color: "#9CA3AF" }}> {food.time}</span>
-          <span style={{ fontSize: 11, color: "#9CA3AF" }}>
+          <span style={{ fontSize: 11, color: "#9C7B5A" }}> {food.time}</span>
+          <span style={{ fontSize: 11, color: "#9C7B5A" }}>
             {food.calories} kcal
           </span>
         </div>
