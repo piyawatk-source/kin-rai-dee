@@ -76,7 +76,7 @@ export default function App() {
             <div>
               <div
                 style={{
-                  fontSize: 13,
+                  fontSize: 55,
                   fontWeight: 700,
                   color: "#991B1B",
                   textTransform: "uppercase",
@@ -88,7 +88,7 @@ export default function App() {
               <h1
                 style={{
                   margin: "8px 0 0",
-                  fontSize: 38,
+                  fontSize: 25,
                   lineHeight: 1.1,
                   color: "#1C1410",
                   fontWeight: 800,
